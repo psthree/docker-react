@@ -1,0 +1,21 @@
+# Specify a base image
+FROM node:alpine
+
+WORKDIR '/app'
+# Specify a base image
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+
+# to run docker build -f Dockerfile.dev .
+
+# to run test
+# docker run <container id> npm run test
+# docker run 2f8f8a397435 npm run test
+# to get more options and be able to user the test comands
+# that appere in the terminal
+# docker run -it <container> npm run test
