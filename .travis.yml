@@ -1,0 +1,8 @@
+language: generic
+sudo: required
+services: -docker
+
+before_install: -docker build -t psthree/docker-react -f Dockerfile.dev .
+
+ script:
+  - docker run -e CI=true psthree/docker-react npm run test
