@@ -11,7 +11,8 @@ RUN npm run build
 # run phase (server)
 FROM nginx
 EXPOSE 80
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=0 /app/build /usr/share/nginx/html
+
 
 
 # docker build .
