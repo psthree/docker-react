@@ -1,6 +1,7 @@
 # react build phase
 # Specify a base image
-FROM node:alpine as builder
+#FROM node:alpine as builder
+FROM node:alpine
 WORKDIR '/app'
 COPY package*.json ./
 RUN npm install
